@@ -1,0 +1,154 @@
+اول مساهمه تتمثل في تعديل جزءالتقييم , بدلا من مجرد k fold نستخدم فكرةHidden link evaluation 
+
+✅ الخلاصة
+
+لإضافة الفكرة:
+
+اختر مجموعة علاقات معروفة.
+
+خزّنها في hidden_test.
+
+احذفها من الجراف باستخدام remove_graph.
+
+درّب النموذج.
+
+اختبر هل يستطيع التنبؤ بها.
+
+او ناخذ علاقات ايجابيه وسلبيه ونرى ما نتيجة التنبؤ من النموذج 
+
+هذا يُعتبر تحسينًا في التقييم وليس تغييرًا في النموذج نفسه.
+
+ الملفات التي ستضيفها
+
+أنشئ مجلد مثلاً:
+
+experiments/
+
+ثم أضف الملفات التالية:
+
+experiments/
+    run_hidden_link_experiment.py
+    hidden_link_split.py
+    evaluate_hidden_links.py
+1️⃣ الملف الأول
+hidden_link_split.py
+
+هذا الملف وظيفته اختيار العلاقات التي سنخفيها.
+
+import numpy as np
+import pandas as pd
+
+def create_hidden_test(dataset_path, hidden_ratio=0.1, seed=0):
+
+    dr_di = pd.read_csv(f"{dataset_path}/drug_dis.csv", header=None)
+
+    pairs = np.array(np.where(dr_di == 1)).T
+
+    np.random.seed(seed)
+    np.random.shuffle(pairs)
+
+    n_hidden = int(len(pairs) * hidden_ratio)
+
+    hidden_edges = pairs[:n_hidden]
+    train_edges = pairs[n_hidden:]
+
+    return train_edges, hidden_edges
+2️⃣ الملف الثاني
+evaluate_hidden_links.py
+
+هذا الملف سيحسب دقة التنبؤ.
+
+import torch
+import numpy as np
+from sklearn.metrics import roc_auc_score, average_precision_score
+
+def evaluate_hidden(model, hidden_edges, negative_edges):
+
+    pos_scores = []
+    neg_scores = []
+
+    for d, dis in hidden_edges:
+        score = model.predict(d, dis)
+        pos_scores.append(score)
+
+    for d, dis in negative_edges:
+        score = model.predict(d, dis)
+        neg_scores.append(score)
+
+    y_true = np.concatenate([
+        np.ones(len(pos_scores)),
+        np.zeros(len(neg_scores))
+    ])
+
+    y_scores = np.concatenate([
+        pos_scores,
+        neg_scores
+    ])
+
+    auc = roc_auc_score(y_true, y_scores)
+    aupr = average_precision_score(y_true, y_scores)
+
+    return auc, aupr
+3️⃣ الملف الرئيسي للتجربة
+run_hidden_link_experiment.py
+
+هذا الملف هو الذي سيشغل التجربة.
+
+import torch
+from dataset import load_dataset, remove_graph
+from hidden_link_split import create_hidden_test
+
+def run(args):
+
+    # تحميل الجراف
+    g, g_llm = load_dataset(args)
+
+    # اختيار العلاقات المخفية
+    train_edges, hidden_edges = create_hidden_test(
+        f"../data/{args.dataset}",
+        hidden_ratio=0.1
+    )
+
+    # حذف العلاقات من الجراف
+    g_train = remove_graph(g, hidden_edges)
+
+    # توليد الخصائص
+    features = generate_feat(args, g_train, g_llm)
+
+    # تدريب النموذج
+    model = train_model(g_train, features)
+
+    # اختبار العلاقات المخفية
+    auc, aupr = evaluate_hidden(model, hidden_edges)
+
+    print("Hidden Link AUC:", auc)
+    print("Hidden Link AUPR:", aupr)
+ما الملفات الأصلية التي سنستخدمها
+
+لن نعدل أي شيء داخلها، فقط نستدعيها.
+
+سنستخدم من الكود الأصلي:
+
+dataset.py
+model.py
+train.py
+utils.py
+
+خصوصًا:
+
+load_dataset
+
+remove_graph
+
+generate_feat
+
+كيف ستشغل التجربة
+
+بدلاً من تشغيل السكريبت الأصلي مثل:
+
+python main.py
+
+ستشغل:
+
+python experiments/run_hidden_link_experiment.py
+ 

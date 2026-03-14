@@ -1,0 +1,287 @@
+2026-03-08 12:21:18,552 - INFO - Namespace(device_id=None, dataset='Cdataset', BERT_emb=True, LLM_emb=False, saved_path='../result\\Cdataset_graph_graph_BERT_1000_0.0_128\\42', seed=42, nfold=5, epoch=1000, learning_rate=0.01, weight_decay=0.0, patience=100, feature_type='BERT', concatenate_type='graph_graph', hidden_feats=128, dropout=0.0, dr_fingerprint=True, dis_prot_assoc=True)
+2026-03-08 12:21:18,552 - INFO - Training on CPU
+2026-03-08 12:21:19,371 - INFO - 5-Cross Validation: Fold 1
+2026-03-08 12:21:20,369 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 12:21:23,116 - INFO - Number of total training samples: 216933, pos samples: 2025, neg samples: 214908
+2026-03-08 12:21:23,116 - INFO - Number of total testing samples: 54234, pos samples: 507, neg samples: 53727
+2026-03-08 12:21:27,115 - INFO - Loss pos weight: 106.127
+2026-03-08 12:23:10,344 - INFO - Epoch 50 Loss: 0.356; Train AUC 0.978; AUC 0.853; AUPR: 0.159
+2026-03-08 12:24:45,172 - INFO - Epoch 100 Loss: 0.189; Train AUC 0.993; AUC 0.861; AUPR: 0.309
+2026-03-08 12:26:21,190 - INFO - Epoch 150 Loss: 0.134; Train AUC 0.996; AUC 0.875; AUPR: 0.355
+2026-03-08 12:27:56,842 - INFO - Epoch 200 Loss: 0.105; Train AUC 0.997; AUC 0.877; AUPR: 0.379
+2026-03-08 12:29:31,500 - INFO - Epoch 250 Loss: 0.085; Train AUC 0.998; AUC 0.864; AUPR: 0.427
+2026-03-08 12:31:08,809 - INFO - Epoch 300 Loss: 0.073; Train AUC 0.999; AUC 0.870; AUPR: 0.423
+2026-03-08 12:32:45,303 - INFO - Epoch 350 Loss: 0.073; Train AUC 0.999; AUC 0.864; AUPR: 0.446
+2026-03-08 12:34:20,279 - INFO - Epoch 400 Loss: 0.062; Train AUC 0.999; AUC 0.862; AUPR: 0.428
+2026-03-08 12:35:55,756 - INFO - Epoch 450 Loss: 0.058; Train AUC 0.999; AUC 0.866; AUPR: 0.447
+2026-03-08 12:37:44,260 - INFO - Epoch 500 Loss: 0.052; Train AUC 0.999; AUC 0.853; AUPR: 0.457
+2026-03-08 12:39:23,836 - INFO - Epoch 550 Loss: 0.049; Train AUC 0.999; AUC 0.858; AUPR: 0.454
+2026-03-08 12:41:08,446 - INFO - Epoch 600 Loss: 0.044; Train AUC 0.999; AUC 0.866; AUPR: 0.480
+2026-03-08 12:42:44,521 - INFO - Epoch 650 Loss: 0.041; Train AUC 0.999; AUC 0.862; AUPR: 0.518
+2026-03-08 12:44:17,017 - INFO - Epoch 700 Loss: 0.039; Train AUC 1.000; AUC 0.854; AUPR: 0.477
+2026-03-08 12:45:40,332 - INFO - Epoch 750 Loss: 0.040; Train AUC 0.999; AUC 0.857; AUPR: 0.475
+2026-03-08 12:46:56,399 - INFO - Epoch 800 Loss: 0.036; Train AUC 1.000; AUC 0.866; AUPR: 0.507
+2026-03-08 12:48:10,997 - INFO - Epoch 850 Loss: 0.037; Train AUC 1.000; AUC 0.856; AUPR: 0.477
+2026-03-08 12:49:25,387 - INFO - Epoch 900 Loss: 0.043; Train AUC 0.999; AUC 0.871; AUPR: 0.486
+2026-03-08 12:50:39,749 - INFO - Epoch 950 Loss: 0.036; Train AUC 1.000; AUC 0.855; AUPR: 0.480
+2026-03-08 12:51:54,492 - INFO - Epoch 1000 Loss: 0.034; Train AUC 1.000; AUC 0.864; AUPR: 0.509
+2026-03-08 12:51:54,756 - INFO - 5-Cross Validation: Fold 2
+2026-03-08 12:51:55,267 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 12:51:56,882 - INFO - Number of total training samples: 216933, pos samples: 2025, neg samples: 214908
+2026-03-08 12:51:56,882 - INFO - Number of total testing samples: 54234, pos samples: 507, neg samples: 53727
+2026-03-08 12:51:56,949 - INFO - Loss pos weight: 106.127
+2026-03-08 12:53:12,690 - INFO - Epoch 50 Loss: 0.333; Train AUC 0.982; AUC 0.861; AUPR: 0.159
+2026-03-08 12:54:27,831 - INFO - Epoch 100 Loss: 0.175; Train AUC 0.994; AUC 0.877; AUPR: 0.264
+2026-03-08 12:55:43,423 - INFO - Epoch 150 Loss: 0.130; Train AUC 0.997; AUC 0.870; AUPR: 0.305
+2026-03-08 12:56:58,984 - INFO - Epoch 200 Loss: 0.093; Train AUC 0.998; AUC 0.863; AUPR: 0.360
+2026-03-08 12:58:14,343 - INFO - Epoch 250 Loss: 0.068; Train AUC 0.999; AUC 0.867; AUPR: 0.387
+2026-03-08 12:59:29,612 - INFO - Epoch 300 Loss: 0.072; Train AUC 0.999; AUC 0.857; AUPR: 0.406
+2026-03-08 13:00:44,746 - INFO - Epoch 350 Loss: 0.067; Train AUC 0.999; AUC 0.850; AUPR: 0.378
+2026-03-08 13:02:01,318 - INFO - Epoch 400 Loss: 0.050; Train AUC 0.999; AUC 0.873; AUPR: 0.437
+2026-03-08 13:03:16,344 - INFO - Epoch 450 Loss: 0.053; Train AUC 0.999; AUC 0.861; AUPR: 0.402
+2026-03-08 13:04:31,264 - INFO - Epoch 500 Loss: 0.041; Train AUC 0.999; AUC 0.855; AUPR: 0.427
+2026-03-08 13:05:51,089 - INFO - Epoch 550 Loss: 0.036; Train AUC 0.999; AUC 0.864; AUPR: 0.450
+2026-03-08 13:07:11,169 - INFO - Epoch 600 Loss: 0.037; Train AUC 1.000; AUC 0.857; AUPR: 0.447
+2026-03-08 13:08:27,109 - INFO - Epoch 650 Loss: 0.037; Train AUC 1.000; AUC 0.850; AUPR: 0.448
+2026-03-08 13:09:42,468 - INFO - Epoch 700 Loss: 0.035; Train AUC 1.000; AUC 0.861; AUPR: 0.427
+2026-03-08 13:10:57,947 - INFO - Epoch 750 Loss: 0.035; Train AUC 1.000; AUC 0.850; AUPR: 0.424
+2026-03-08 13:12:14,013 - INFO - Epoch 800 Loss: 0.037; Train AUC 1.000; AUC 0.846; AUPR: 0.432
+2026-03-08 13:13:29,574 - INFO - Epoch 850 Loss: 0.035; Train AUC 1.000; AUC 0.851; AUPR: 0.415
+2026-03-08 13:14:45,111 - INFO - Epoch 900 Loss: 0.030; Train AUC 1.000; AUC 0.852; AUPR: 0.416
+2026-03-08 13:16:01,163 - INFO - Epoch 950 Loss: 0.032; Train AUC 1.000; AUC 0.864; AUPR: 0.427
+2026-03-08 13:17:16,535 - INFO - Epoch 1000 Loss: 0.033; Train AUC 1.000; AUC 0.850; AUPR: 0.430
+2026-03-08 13:17:16,718 - INFO - 5-Cross Validation: Fold 3
+2026-03-08 13:17:17,248 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 13:17:18,806 - INFO - Number of total training samples: 216934, pos samples: 2026, neg samples: 214908
+2026-03-08 13:17:18,806 - INFO - Number of total testing samples: 54233, pos samples: 506, neg samples: 53727
+2026-03-08 13:17:18,871 - INFO - Loss pos weight: 106.075
+2026-03-08 13:18:34,036 - INFO - Epoch 50 Loss: 0.321; Train AUC 0.982; AUC 0.862; AUPR: 0.194
+2026-03-08 13:19:49,373 - INFO - Epoch 100 Loss: 0.161; Train AUC 0.995; AUC 0.874; AUPR: 0.342
+2026-03-08 13:21:05,093 - INFO - Epoch 150 Loss: 0.111; Train AUC 0.997; AUC 0.864; AUPR: 0.419
+2026-03-08 13:22:20,551 - INFO - Epoch 200 Loss: 0.087; Train AUC 0.998; AUC 0.869; AUPR: 0.453
+2026-03-08 13:23:36,006 - INFO - Epoch 250 Loss: 0.069; Train AUC 0.999; AUC 0.860; AUPR: 0.439
+2026-03-08 13:24:51,419 - INFO - Epoch 300 Loss: 0.062; Train AUC 0.999; AUC 0.861; AUPR: 0.450
+2026-03-08 13:26:06,712 - INFO - Epoch 350 Loss: 0.059; Train AUC 0.999; AUC 0.861; AUPR: 0.454
+2026-03-08 13:27:22,108 - INFO - Epoch 400 Loss: 0.046; Train AUC 0.999; AUC 0.861; AUPR: 0.469
+2026-03-08 13:28:37,466 - INFO - Epoch 450 Loss: 0.052; Train AUC 0.999; AUC 0.856; AUPR: 0.467
+2026-03-08 13:29:52,372 - INFO - Epoch 500 Loss: 0.041; Train AUC 0.999; AUC 0.858; AUPR: 0.514
+2026-03-08 13:31:07,947 - INFO - Epoch 550 Loss: 0.038; Train AUC 0.999; AUC 0.855; AUPR: 0.481
+2026-03-08 13:32:23,223 - INFO - Epoch 600 Loss: 0.035; Train AUC 1.000; AUC 0.853; AUPR: 0.468
+2026-03-08 13:33:38,325 - INFO - Epoch 650 Loss: 0.038; Train AUC 1.000; AUC 0.847; AUPR: 0.469
+2026-03-08 13:34:53,641 - INFO - Epoch 700 Loss: 0.037; Train AUC 1.000; AUC 0.844; AUPR: 0.488
+2026-03-08 13:36:09,139 - INFO - Epoch 750 Loss: 0.033; Train AUC 1.000; AUC 0.852; AUPR: 0.485
+2026-03-08 13:37:24,273 - INFO - Epoch 800 Loss: 0.030; Train AUC 1.000; AUC 0.854; AUPR: 0.490
+2026-03-08 13:38:42,046 - INFO - Epoch 850 Loss: 0.029; Train AUC 1.000; AUC 0.852; AUPR: 0.482
+2026-03-08 13:40:02,226 - INFO - Epoch 900 Loss: 0.034; Train AUC 1.000; AUC 0.849; AUPR: 0.494
+2026-03-08 13:41:18,829 - INFO - Epoch 950 Loss: 0.037; Train AUC 1.000; AUC 0.850; AUPR: 0.507
+2026-03-08 13:42:34,545 - INFO - Epoch 1000 Loss: 0.028; Train AUC 1.000; AUC 0.853; AUPR: 0.505
+2026-03-08 13:42:34,630 - INFO - 5-Cross Validation: Fold 4
+2026-03-08 13:42:34,998 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 13:42:36,466 - INFO - Number of total training samples: 216934, pos samples: 2026, neg samples: 214908
+2026-03-08 13:42:36,467 - INFO - Number of total testing samples: 54233, pos samples: 506, neg samples: 53727
+2026-03-08 13:42:36,490 - INFO - Loss pos weight: 106.075
+2026-03-08 13:43:50,730 - INFO - Epoch 50 Loss: 0.335; Train AUC 0.981; AUC 0.861; AUPR: 0.201
+2026-03-08 13:45:05,062 - INFO - Epoch 100 Loss: 0.161; Train AUC 0.995; AUC 0.870; AUPR: 0.344
+2026-03-08 13:46:21,999 - INFO - Epoch 150 Loss: 0.109; Train AUC 0.997; AUC 0.881; AUPR: 0.388
+2026-03-08 13:47:38,406 - INFO - Epoch 200 Loss: 0.083; Train AUC 0.998; AUC 0.867; AUPR: 0.413
+2026-03-08 13:48:55,492 - INFO - Epoch 250 Loss: 0.078; Train AUC 0.999; AUC 0.878; AUPR: 0.468
+2026-03-08 13:50:09,903 - INFO - Epoch 300 Loss: 0.052; Train AUC 0.999; AUC 0.869; AUPR: 0.449
+2026-03-08 13:51:24,339 - INFO - Epoch 350 Loss: 0.050; Train AUC 0.999; AUC 0.873; AUPR: 0.473
+2026-03-08 13:52:38,637 - INFO - Epoch 400 Loss: 0.046; Train AUC 0.999; AUC 0.864; AUPR: 0.472
+2026-03-08 13:53:52,897 - INFO - Epoch 450 Loss: 0.039; Train AUC 0.999; AUC 0.864; AUPR: 0.490
+2026-03-08 13:55:07,979 - INFO - Epoch 500 Loss: 0.038; Train AUC 1.000; AUC 0.866; AUPR: 0.478
+2026-03-08 13:56:22,306 - INFO - Epoch 550 Loss: 0.040; Train AUC 0.999; AUC 0.867; AUPR: 0.460
+2026-03-08 13:57:36,701 - INFO - Epoch 600 Loss: 0.038; Train AUC 1.000; AUC 0.852; AUPR: 0.473
+2026-03-08 13:58:51,049 - INFO - Epoch 650 Loss: 0.033; Train AUC 1.000; AUC 0.860; AUPR: 0.477
+2026-03-08 14:00:10,167 - INFO - Epoch 700 Loss: 0.039; Train AUC 1.000; AUC 0.859; AUPR: 0.468
+2026-03-08 14:01:35,526 - INFO - Epoch 750 Loss: 0.029; Train AUC 1.000; AUC 0.854; AUPR: 0.477
+2026-03-08 14:02:54,983 - INFO - Epoch 800 Loss: 0.033; Train AUC 1.000; AUC 0.857; AUPR: 0.490
+2026-03-08 14:04:09,065 - INFO - Epoch 850 Loss: 0.031; Train AUC 1.000; AUC 0.857; AUPR: 0.485
+2026-03-08 14:05:24,550 - INFO - Epoch 900 Loss: 0.030; Train AUC 1.000; AUC 0.850; AUPR: 0.490
+2026-03-08 14:06:42,304 - INFO - Epoch 950 Loss: 0.031; Train AUC 1.000; AUC 0.854; AUPR: 0.489
+2026-03-08 14:07:59,239 - INFO - Epoch 1000 Loss: 0.027; Train AUC 1.000; AUC 0.864; AUPR: 0.491
+2026-03-08 14:07:59,418 - INFO - 5-Cross Validation: Fold 5
+2026-03-08 14:07:59,933 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 14:08:01,610 - INFO - Number of total training samples: 216934, pos samples: 2026, neg samples: 214908
+2026-03-08 14:08:01,611 - INFO - Number of total testing samples: 54233, pos samples: 506, neg samples: 53727
+2026-03-08 14:08:01,659 - INFO - Loss pos weight: 106.075
+2026-03-08 14:09:17,372 - INFO - Epoch 50 Loss: 0.339; Train AUC 0.981; AUC 0.854; AUPR: 0.158
+2026-03-08 14:10:33,575 - INFO - Epoch 100 Loss: 0.176; Train AUC 0.994; AUC 0.876; AUPR: 0.266
+2026-03-08 14:11:56,817 - INFO - Epoch 150 Loss: 0.129; Train AUC 0.996; AUC 0.857; AUPR: 0.352
+2026-03-08 14:13:11,676 - INFO - Epoch 200 Loss: 0.094; Train AUC 0.998; AUC 0.856; AUPR: 0.333
+2026-03-08 14:14:25,821 - INFO - Epoch 250 Loss: 0.076; Train AUC 0.998; AUC 0.843; AUPR: 0.404
+2026-03-08 14:15:42,871 - INFO - Epoch 300 Loss: 0.072; Train AUC 0.999; AUC 0.857; AUPR: 0.397
+2026-03-08 14:16:58,667 - INFO - Epoch 350 Loss: 0.062; Train AUC 0.999; AUC 0.842; AUPR: 0.436
+2026-03-08 14:18:12,741 - INFO - Epoch 400 Loss: 0.050; Train AUC 0.999; AUC 0.842; AUPR: 0.394
+2026-03-08 14:19:27,036 - INFO - Epoch 450 Loss: 0.048; Train AUC 0.999; AUC 0.845; AUPR: 0.435
+2026-03-08 14:20:45,408 - INFO - Epoch 500 Loss: 0.043; Train AUC 0.999; AUC 0.843; AUPR: 0.448
+2026-03-08 14:22:05,474 - INFO - Epoch 550 Loss: 0.040; Train AUC 0.999; AUC 0.828; AUPR: 0.454
+2026-03-08 14:23:28,181 - INFO - Epoch 600 Loss: 0.038; Train AUC 1.000; AUC 0.836; AUPR: 0.470
+2026-03-08 14:27:24,768 - INFO - Namespace(device_id=None, dataset='Cdataset', BERT_emb=True, LLM_emb=False, saved_path='../result\\Cdataset_graph_graph_BERT_1000_0.0_128\\42', seed=42, nfold=5, epoch=1000, learning_rate=0.01, weight_decay=0.0, patience=100, feature_type='BERT', concatenate_type='graph_graph', hidden_feats=128, dropout=0.0, dr_fingerprint=True, dis_prot_assoc=True)
+2026-03-08 14:27:24,768 - INFO - Training on CPU
+2026-03-08 14:27:25,568 - INFO - 5-Cross Validation: Fold 1
+2026-03-08 14:27:26,225 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 14:27:27,983 - INFO - Number of total training samples: 216933, pos samples: 2025, neg samples: 214908
+2026-03-08 14:27:27,984 - INFO - Number of total testing samples: 54234, pos samples: 507, neg samples: 53727
+2026-03-08 14:27:30,301 - INFO - Loss pos weight: 106.127
+2026-03-08 14:28:48,607 - INFO - Epoch 50 Loss: 0.356; Train AUC 0.978; AUC 0.853; AUPR: 0.159
+2026-03-08 14:30:07,866 - INFO - Epoch 100 Loss: 0.189; Train AUC 0.993; AUC 0.861; AUPR: 0.309
+2026-03-08 14:31:28,334 - INFO - Epoch 150 Loss: 0.134; Train AUC 0.996; AUC 0.875; AUPR: 0.355
+2026-03-08 14:32:46,092 - INFO - Epoch 200 Loss: 0.105; Train AUC 0.997; AUC 0.877; AUPR: 0.379
+2026-03-08 14:34:03,334 - INFO - Epoch 250 Loss: 0.085; Train AUC 0.998; AUC 0.864; AUPR: 0.427
+2026-03-08 14:35:19,407 - INFO - Epoch 300 Loss: 0.073; Train AUC 0.999; AUC 0.870; AUPR: 0.423
+2026-03-08 14:36:37,526 - INFO - Epoch 350 Loss: 0.073; Train AUC 0.999; AUC 0.864; AUPR: 0.446
+2026-03-08 14:37:53,038 - INFO - Epoch 400 Loss: 0.062; Train AUC 0.999; AUC 0.862; AUPR: 0.428
+2026-03-08 14:39:08,189 - INFO - Epoch 450 Loss: 0.058; Train AUC 0.999; AUC 0.866; AUPR: 0.447
+2026-03-08 14:40:22,892 - INFO - Epoch 500 Loss: 0.052; Train AUC 0.999; AUC 0.853; AUPR: 0.457
+2026-03-08 14:41:37,995 - INFO - Epoch 550 Loss: 0.049; Train AUC 0.999; AUC 0.858; AUPR: 0.454
+2026-03-08 14:42:51,885 - INFO - Epoch 600 Loss: 0.044; Train AUC 0.999; AUC 0.866; AUPR: 0.480
+2026-03-08 14:44:05,536 - INFO - Epoch 650 Loss: 0.041; Train AUC 0.999; AUC 0.862; AUPR: 0.518
+2026-03-08 14:45:20,220 - INFO - Epoch 700 Loss: 0.039; Train AUC 1.000; AUC 0.854; AUPR: 0.477
+2026-03-08 14:46:34,867 - INFO - Epoch 750 Loss: 0.040; Train AUC 0.999; AUC 0.857; AUPR: 0.475
+2026-03-08 14:47:51,290 - INFO - Epoch 800 Loss: 0.036; Train AUC 1.000; AUC 0.866; AUPR: 0.507
+2026-03-08 14:49:08,669 - INFO - Epoch 850 Loss: 0.037; Train AUC 1.000; AUC 0.856; AUPR: 0.477
+2026-03-08 14:50:25,186 - INFO - Epoch 900 Loss: 0.043; Train AUC 0.999; AUC 0.871; AUPR: 0.486
+2026-03-08 14:51:41,581 - INFO - Epoch 950 Loss: 0.036; Train AUC 1.000; AUC 0.855; AUPR: 0.480
+2026-03-08 14:53:00,345 - INFO - Epoch 1000 Loss: 0.034; Train AUC 1.000; AUC 0.864; AUPR: 0.509
+2026-03-08 14:53:00,592 - INFO - 5-Cross Validation: Fold 2
+2026-03-08 14:53:01,177 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 14:53:02,772 - INFO - Number of total training samples: 216933, pos samples: 2025, neg samples: 214908
+2026-03-08 14:53:02,772 - INFO - Number of total testing samples: 54234, pos samples: 507, neg samples: 53727
+2026-03-08 14:53:02,846 - INFO - Loss pos weight: 106.127
+2026-03-08 14:54:22,990 - INFO - Epoch 50 Loss: 0.333; Train AUC 0.982; AUC 0.861; AUPR: 0.159
+2026-03-08 14:55:40,571 - INFO - Epoch 100 Loss: 0.175; Train AUC 0.994; AUC 0.877; AUPR: 0.264
+2026-03-08 14:57:02,001 - INFO - Epoch 150 Loss: 0.130; Train AUC 0.997; AUC 0.870; AUPR: 0.305
+2026-03-08 14:58:20,092 - INFO - Epoch 200 Loss: 0.093; Train AUC 0.998; AUC 0.863; AUPR: 0.360
+2026-03-08 14:59:38,762 - INFO - Epoch 250 Loss: 0.068; Train AUC 0.999; AUC 0.867; AUPR: 0.387
+2026-03-08 15:00:55,391 - INFO - Epoch 300 Loss: 0.072; Train AUC 0.999; AUC 0.857; AUPR: 0.406
+2026-03-08 15:02:13,220 - INFO - Epoch 350 Loss: 0.067; Train AUC 0.999; AUC 0.850; AUPR: 0.378
+2026-03-08 15:03:34,063 - INFO - Epoch 400 Loss: 0.050; Train AUC 0.999; AUC 0.873; AUPR: 0.437
+2026-03-08 15:04:52,819 - INFO - Epoch 450 Loss: 0.053; Train AUC 0.999; AUC 0.861; AUPR: 0.402
+2026-03-08 15:06:16,228 - INFO - Epoch 500 Loss: 0.041; Train AUC 0.999; AUC 0.855; AUPR: 0.427
+2026-03-08 15:07:35,468 - INFO - Epoch 550 Loss: 0.036; Train AUC 0.999; AUC 0.864; AUPR: 0.450
+2026-03-08 15:08:52,936 - INFO - Epoch 600 Loss: 0.037; Train AUC 1.000; AUC 0.857; AUPR: 0.447
+2026-03-08 15:10:11,491 - INFO - Epoch 650 Loss: 0.037; Train AUC 1.000; AUC 0.850; AUPR: 0.448
+2026-03-08 15:11:26,489 - INFO - Epoch 700 Loss: 0.035; Train AUC 1.000; AUC 0.861; AUPR: 0.427
+2026-03-08 15:12:46,332 - INFO - Epoch 750 Loss: 0.035; Train AUC 1.000; AUC 0.850; AUPR: 0.424
+2026-03-08 15:14:04,097 - INFO - Epoch 800 Loss: 0.037; Train AUC 1.000; AUC 0.846; AUPR: 0.432
+2026-03-08 15:15:20,774 - INFO - Epoch 850 Loss: 0.035; Train AUC 1.000; AUC 0.851; AUPR: 0.415
+2026-03-08 15:16:36,344 - INFO - Epoch 900 Loss: 0.030; Train AUC 1.000; AUC 0.852; AUPR: 0.416
+2026-03-08 15:17:51,506 - INFO - Epoch 950 Loss: 0.032; Train AUC 1.000; AUC 0.864; AUPR: 0.427
+2026-03-08 15:19:06,556 - INFO - Epoch 1000 Loss: 0.033; Train AUC 1.000; AUC 0.850; AUPR: 0.430
+2026-03-08 15:19:06,763 - INFO - 5-Cross Validation: Fold 3
+2026-03-08 15:19:07,320 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 15:19:08,941 - INFO - Number of total training samples: 216934, pos samples: 2026, neg samples: 214908
+2026-03-08 15:19:08,941 - INFO - Number of total testing samples: 54233, pos samples: 506, neg samples: 53727
+2026-03-08 15:19:08,999 - INFO - Loss pos weight: 106.075
+2026-03-08 15:20:30,797 - INFO - Epoch 50 Loss: 0.321; Train AUC 0.982; AUC 0.862; AUPR: 0.194
+2026-03-08 15:21:52,613 - INFO - Epoch 100 Loss: 0.161; Train AUC 0.995; AUC 0.874; AUPR: 0.342
+2026-03-08 15:23:11,065 - INFO - Epoch 150 Loss: 0.111; Train AUC 0.997; AUC 0.864; AUPR: 0.419
+2026-03-08 15:24:29,278 - INFO - Epoch 200 Loss: 0.087; Train AUC 0.998; AUC 0.869; AUPR: 0.453
+2026-03-08 15:25:44,905 - INFO - Epoch 250 Loss: 0.069; Train AUC 0.999; AUC 0.860; AUPR: 0.439
+2026-03-08 15:26:58,929 - INFO - Epoch 300 Loss: 0.062; Train AUC 0.999; AUC 0.861; AUPR: 0.450
+2026-03-08 15:28:17,163 - INFO - Epoch 350 Loss: 0.059; Train AUC 0.999; AUC 0.861; AUPR: 0.454
+2026-03-08 15:29:30,711 - INFO - Epoch 400 Loss: 0.046; Train AUC 0.999; AUC 0.861; AUPR: 0.469
+2026-03-08 15:30:48,607 - INFO - Epoch 450 Loss: 0.052; Train AUC 0.999; AUC 0.856; AUPR: 0.467
+2026-03-08 15:32:04,534 - INFO - Epoch 500 Loss: 0.041; Train AUC 0.999; AUC 0.858; AUPR: 0.514
+2026-03-08 15:33:19,875 - INFO - Epoch 550 Loss: 0.038; Train AUC 0.999; AUC 0.855; AUPR: 0.481
+2026-03-08 15:34:39,647 - INFO - Epoch 600 Loss: 0.035; Train AUC 1.000; AUC 0.853; AUPR: 0.468
+2026-03-08 15:35:59,366 - INFO - Epoch 650 Loss: 0.038; Train AUC 1.000; AUC 0.847; AUPR: 0.469
+2026-03-08 15:37:15,718 - INFO - Epoch 700 Loss: 0.037; Train AUC 1.000; AUC 0.844; AUPR: 0.488
+2026-03-08 15:38:31,913 - INFO - Epoch 750 Loss: 0.033; Train AUC 1.000; AUC 0.852; AUPR: 0.485
+2026-03-08 15:39:50,299 - INFO - Epoch 800 Loss: 0.030; Train AUC 1.000; AUC 0.854; AUPR: 0.490
+2026-03-08 15:41:09,406 - INFO - Epoch 850 Loss: 0.029; Train AUC 1.000; AUC 0.852; AUPR: 0.482
+2026-03-08 15:42:28,864 - INFO - Epoch 900 Loss: 0.034; Train AUC 1.000; AUC 0.849; AUPR: 0.494
+2026-03-08 15:43:48,279 - INFO - Epoch 950 Loss: 0.037; Train AUC 1.000; AUC 0.850; AUPR: 0.507
+2026-03-08 15:45:02,648 - INFO - Epoch 1000 Loss: 0.028; Train AUC 1.000; AUC 0.853; AUPR: 0.505
+2026-03-08 15:45:02,813 - INFO - 5-Cross Validation: Fold 4
+2026-03-08 15:45:03,261 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 15:45:04,794 - INFO - Number of total training samples: 216934, pos samples: 2026, neg samples: 214908
+2026-03-08 15:45:04,794 - INFO - Number of total testing samples: 54233, pos samples: 506, neg samples: 53727
+2026-03-08 15:45:04,831 - INFO - Loss pos weight: 106.075
+2026-03-08 15:46:18,986 - INFO - Epoch 50 Loss: 0.335; Train AUC 0.981; AUC 0.861; AUPR: 0.201
+2026-03-08 15:47:32,859 - INFO - Epoch 100 Loss: 0.161; Train AUC 0.995; AUC 0.870; AUPR: 0.344
+2026-03-08 15:48:48,278 - INFO - Epoch 150 Loss: 0.109; Train AUC 0.997; AUC 0.881; AUPR: 0.388
+2026-03-08 15:50:04,242 - INFO - Epoch 200 Loss: 0.083; Train AUC 0.998; AUC 0.867; AUPR: 0.413
+2026-03-08 15:51:20,940 - INFO - Epoch 250 Loss: 0.078; Train AUC 0.999; AUC 0.878; AUPR: 0.468
+2026-03-08 15:52:37,329 - INFO - Epoch 300 Loss: 0.052; Train AUC 0.999; AUC 0.869; AUPR: 0.449
+2026-03-08 15:53:57,980 - INFO - Epoch 350 Loss: 0.050; Train AUC 0.999; AUC 0.873; AUPR: 0.473
+2026-03-08 15:55:15,646 - INFO - Epoch 400 Loss: 0.046; Train AUC 0.999; AUC 0.864; AUPR: 0.472
+2026-03-08 15:56:33,393 - INFO - Epoch 450 Loss: 0.039; Train AUC 0.999; AUC 0.864; AUPR: 0.490
+2026-03-08 15:57:54,318 - INFO - Epoch 500 Loss: 0.038; Train AUC 1.000; AUC 0.866; AUPR: 0.478
+2026-03-08 15:59:14,042 - INFO - Epoch 550 Loss: 0.040; Train AUC 0.999; AUC 0.867; AUPR: 0.460
+2026-03-08 16:00:30,769 - INFO - Epoch 600 Loss: 0.038; Train AUC 1.000; AUC 0.852; AUPR: 0.473
+2026-03-08 16:01:50,263 - INFO - Epoch 650 Loss: 0.033; Train AUC 1.000; AUC 0.860; AUPR: 0.477
+2026-03-08 16:03:05,899 - INFO - Epoch 700 Loss: 0.039; Train AUC 1.000; AUC 0.859; AUPR: 0.468
+2026-03-08 16:04:20,431 - INFO - Epoch 750 Loss: 0.029; Train AUC 1.000; AUC 0.854; AUPR: 0.477
+2026-03-08 16:05:36,128 - INFO - Epoch 800 Loss: 0.033; Train AUC 1.000; AUC 0.857; AUPR: 0.490
+2026-03-08 16:06:48,748 - INFO - Epoch 850 Loss: 0.031; Train AUC 1.000; AUC 0.857; AUPR: 0.485
+2026-03-08 16:08:03,013 - INFO - Epoch 900 Loss: 0.030; Train AUC 1.000; AUC 0.850; AUPR: 0.490
+2026-03-08 16:09:19,772 - INFO - Epoch 950 Loss: 0.031; Train AUC 1.000; AUC 0.854; AUPR: 0.489
+2026-03-08 16:10:33,955 - INFO - Epoch 1000 Loss: 0.027; Train AUC 1.000; AUC 0.864; AUPR: 0.491
+2026-03-08 16:10:34,124 - INFO - 5-Cross Validation: Fold 5
+2026-03-08 16:10:34,548 - INFO - (Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6507, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10582},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]), Graph(num_nodes={'disease': 409, 'drug': 663},
+      num_edges={('disease', 'di_di', 'disease'): 6219, ('disease', 'di_dr', 'drug'): 2532, ('drug', 'dr_di', 'disease'): 2532, ('drug', 'dr_dr', 'drug'): 10102},
+      metagraph=[('disease', 'disease', 'di_di'), ('disease', 'drug', 'di_dr'), ('drug', 'disease', 'dr_di'), ('drug', 'drug', 'dr_dr')]))
+2026-03-08 16:10:36,069 - INFO - Number of total training samples: 216934, pos samples: 2026, neg samples: 214908
+2026-03-08 16:10:36,069 - INFO - Number of total testing samples: 54233, pos samples: 506, neg samples: 53727
+2026-03-08 16:10:36,108 - INFO - Loss pos weight: 106.075
+2026-03-08 16:11:51,983 - INFO - Epoch 50 Loss: 0.339; Train AUC 0.981; AUC 0.854; AUPR: 0.158
+2026-03-08 16:13:06,382 - INFO - Epoch 100 Loss: 0.176; Train AUC 0.994; AUC 0.876; AUPR: 0.266
+2026-03-08 16:14:20,726 - INFO - Epoch 150 Loss: 0.129; Train AUC 0.996; AUC 0.857; AUPR: 0.352
+2026-03-08 16:15:38,131 - INFO - Epoch 200 Loss: 0.094; Train AUC 0.998; AUC 0.856; AUPR: 0.333
+2026-03-08 16:16:53,372 - INFO - Epoch 250 Loss: 0.076; Train AUC 0.998; AUC 0.843; AUPR: 0.404
+2026-03-08 16:18:08,947 - INFO - Epoch 300 Loss: 0.072; Train AUC 0.999; AUC 0.857; AUPR: 0.397
+2026-03-08 16:19:24,050 - INFO - Epoch 350 Loss: 0.062; Train AUC 0.999; AUC 0.842; AUPR: 0.436
+2026-03-08 16:20:38,452 - INFO - Epoch 400 Loss: 0.050; Train AUC 0.999; AUC 0.842; AUPR: 0.394
+2026-03-08 16:21:50,865 - INFO - Epoch 450 Loss: 0.048; Train AUC 0.999; AUC 0.845; AUPR: 0.435
+2026-03-08 16:23:04,227 - INFO - Epoch 500 Loss: 0.043; Train AUC 0.999; AUC 0.843; AUPR: 0.448
+2026-03-08 16:24:17,514 - INFO - Epoch 550 Loss: 0.040; Train AUC 0.999; AUC 0.828; AUPR: 0.454
+2026-03-08 16:25:31,907 - INFO - Epoch 600 Loss: 0.038; Train AUC 1.000; AUC 0.836; AUPR: 0.470
+2026-03-08 16:26:49,485 - INFO - Epoch 650 Loss: 0.039; Train AUC 0.999; AUC 0.827; AUPR: 0.462
+2026-03-08 16:28:04,637 - INFO - Epoch 700 Loss: 0.039; Train AUC 1.000; AUC 0.825; AUPR: 0.452
+2026-03-08 16:29:21,559 - INFO - Epoch 750 Loss: 0.037; Train AUC 1.000; AUC 0.830; AUPR: 0.428
+2026-03-08 16:30:36,850 - INFO - Epoch 800 Loss: 0.035; Train AUC 1.000; AUC 0.830; AUPR: 0.465
+2026-03-08 16:31:52,072 - INFO - Epoch 850 Loss: 0.036; Train AUC 1.000; AUC 0.833; AUPR: 0.443
+2026-03-08 16:33:05,173 - INFO - Epoch 900 Loss: 0.031; Train AUC 1.000; AUC 0.832; AUPR: 0.453
+2026-03-08 16:34:17,187 - INFO - Epoch 950 Loss: 0.035; Train AUC 1.000; AUC 0.823; AUPR: 0.453
+2026-03-08 16:35:28,221 - INFO - Epoch 1000 Loss: 0.034; Train AUC 1.000; AUC 0.827; AUPR: 0.461
+2026-03-08 16:36:17,752 - INFO - Overall: AUC 0.843; AUPR: 0.400; Acc: 0.991; F1: 0.460; Precision 0.501; Recall 0.425

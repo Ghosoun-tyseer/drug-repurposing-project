@@ -1,0 +1,70 @@
+هذا الملف يحتوي معلومات عن تشغيل الكود الاساسي بدون اي تعديلات 
+الشبكه كانت GCN  شغلت الكود فقط بدون اي تغيير فقط اضفت جزئين الى كود ARGS
+parser.add_argument('--BERT_emb', action='store_true', default=False,
+                    help='Use BERT embeddings .')
+parser.add_argument('--LLM_emb', action='store_true', default=False,
+                    help='Use LLM embeddings.')
+					وجعلت Cdataset هي الdefault لانها المشتخدمه في المشروع فقط لكي لا اضطر لكتابتها في التيرمينال كل مره اشغل الكود 
+					
+					وتعديل اخر تم على ملف load_data في جزء ال  generate_feat
+					
+					def generate_feat(args, g, g_llm=None):
+    """Generate the node features for the heterogeneous network."""
+    
+    # تحويل قائمة الجرافات إذا تم تمريرها كقائمة
+    if isinstance(g, list):
+        g_llm = g[1]
+        g = g[0]
+        
+    # --- 1. معالجة خصائص الأدوية (Drug Features) ---
+    if args.dr_fingerprint:
+        drug = pd.read_csv(f'../data/{args.dataset}/drug.csv')
+        mol = [Chem.MolFromSmiles(smile) for smile in drug['SMILES'].values]
+        fps = [AllChem.GetMorganFingerprintAsBitVect(m, 2, nBits=2048) for m in mol]
+        g.nodes['drug'].data['fingerprint'] = th.tensor(fps).to(th.float32).to(args.device)
+        dr_feat = th.cat([g.nodes['drug'].data['h'], g.nodes['drug'].data['fingerprint']], dim=1)
+    else:
+        dr_feat = g.nodes['drug'].data['h']
+        
+    # --- 2. معالجة خصائص الأمراض (Disease Features) ---
+    if args.dis_prot_assoc and args.dataset == 'Bdataset':
+        disease = pd.read_csv(f'../data/{args.dataset}/disease.csv')
+        dis_prot = pd.read_csv(f'../data/{args.dataset}/protein_disease.csv')
+        num_prot = dis_prot['Protein'].max()
+        num_dis = dis_prot['Disease'].max()
+        dis_prot_matrix = np.zeros((num_dis+1, num_prot+1))
+        dis_prot_matrix[dis_prot['Disease'], dis_prot['Protein']] = 1
+        g.nodes['disease'].data['dis_prot_assoc'] = th.from_numpy(dis_prot_matrix).to(th.float32).to(args.device)
+        dis_feat = th.cat([g.nodes['disease'].data['h'], g.nodes['disease'].data['dis_prot_assoc']], dim=1)
+    else:
+        dis_feat = g.nodes['disease'].data['h']
+    
+    # --- 3. تعريف المتغيرات بقيم افتراضية لتجنب الخطأ ---
+    drug_LLM_emb = None
+    disease_LLM_emb = None
+
+    # استخراج الـ Embeddings فقط إذا كانت مفعلة
+    if args.BERT_emb or args.LLM_emb:
+        drug_LLM_emb = g_llm.nodes['drug'].data['h']
+        disease_LLM_emb = g_llm.nodes['disease'].data['h']
+
+    # --- 4. إرجاع النتائج بناءً على نوع الدمج ---
+    if args.concatenate_type == 'as_node':
+        return {'drug': th.cat([dr_feat, drug_LLM_emb], dim=1),
+                'disease': th.cat([dis_feat, disease_LLM_emb], dim=1)}
+    
+    elif args.concatenate_type == 'none':
+        return {'drug': dr_feat, 'disease': dis_feat}
+    
+    else:
+        # حفظ الخصائص الأساسية
+        np.save(f'../feat/{args.dataset}/drug_sim_feat.npy', dr_feat.cpu().numpy())
+        np.save(f'../feat/{args.dataset}/disease_sim_feat.npy', dis_feat.cpu().numpy())
+        
+        # حفظ الـ LLM فقط إذا كانت موجودة (هنا حل المشكلة)
+        if drug_LLM_emb is not None:
+            np.save(f'../feat/{args.dataset}/drug_LLM_emb.npy', drug_LLM_emb.cpu().numpy())
+            np.save(f'../feat/{args.dataset}/disease_LLM_emb.npy', disease_LLM_emb.cpu().numpy())
+            
+        return {'drug': dr_feat, 'disease': dis_feat,
+                'drug_LLM': drug_LLM_emb, 'disease_LLM': disease_LLM_emb}  هذا الكود بعد التعديل عليه , الاصلي من الملفات يمكن احضاره 

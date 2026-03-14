@@ -1,0 +1,12 @@
+============================================================
+FINAL BLIND TEST EVALUATION REPORT
+Dataset: Cdataset
+Holdout Ratio: 0.1
+Epochs Trained: 2000
+------------------------------
+STRICT BLIND TEST AUC: 0.8457
+------------------------------
+Recovery Rate (Score > 0.3): 80.24%
+Recovery Rate (Score > 0.4): 74.70%
+Recovery Rate (Score > 0.5): 67.19%
+============================================================
